@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    crossorigin="anonymous">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.0.9/css/fileinput.min.css" media="all"
+    rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.0.9/js/plugins/piexif.min.js"
+    type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.0.9/js/plugins/sortable.min.js"
+    type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.0.9/js/fileinput.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.0.9/js/locales/LANG.js"></script>
+
+
+
+
+<body>
+  <input id="input-id" type="file" class="file" data-preview-file-type="text">
+
+
+  <div id="emojis" class="modal" tabindex="-1" role="dialog" aria-labelledby="..." aria-hidden="true">
+    <p>&#128564;</p>
+    <p>&#128528;</p>
+    <p>&#128557;</p>
+    <p>&#128520;</p>
+    <p>&#128526;</p>
+    <p>&#128517;</p>
+    <p>&#128561;</p>
+    <p>&#128519;</p>
+    <p>&#128514;</p>
+    <p>&#128567;</p>
+    <p>&#128540;</p>
+    <p>&#129324;</p>
+    <p>&#128548;</p>
+    <p>&#128525;</p>
+    <p>&#128552;</p>  
+      
+  </div>
+
+
+  <script>
+    // initialize with defaults
+    $("#input-id").fileinput();
+
+    // with plugin options
+    $("#input-id").fileinput({ 'showUpload': false, 'previewFileType': 'any' });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,5 @@
+1. Completar la función "checkLogin" para que redirija a /login en caso de que usuario no este logueado
+
+2. Validar en el frontend (incluyendo el password_confirm)
+
+3. Usar bootstrap en vez de materialize

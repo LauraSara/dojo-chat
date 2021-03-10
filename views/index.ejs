@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <title>Whatsapp Web</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="static/image/favicon.png" type="image/png">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600%7CRoboto:300,400,500"
+    media="all">
+  <link href="static/css/bootstrap.min.css" rel="stylesheet">
+  <link href="static/css/icomoon.css" rel="stylesheet">
+  <link href="static/css/font-awesome.min.css" rel="stylesheet">
+  <link href="static/css/main.css" rel="stylesheet">
+  <link href="static/css/queries.css" rel="stylesheet">
+  <!--
+    <script src="./path/to/dropzone.js"></script>
+  -->
+
+  <style>
+    #lateral {
+      background-image: linear-gradient(-225deg, #5D9FFF 0%, #B8DCFF 48%, #6BBBFF 100%);
+    }
+    #modal {
+      display: none;
+    }
+    .pie {
+      display: inline-block;
+      width: 900px;
+    }
+    #user {
+      color: black;
+    }
+    #message-form {
+      background-image: linear-gradient(-225deg, #5D9FFF 0%, #B8DCFF 48%, #6BBBFF 100%);
+    }
+    .icono {
+      color: white;
+    }
+    #archivo {
+      text-align: center;
+      margin-left: 300px;
+      display: none;
+    }
+    #container {
+      width: 1250px;
+    }
+    
+    
+  </style>
+</head>
+
+<body>
+  <div class="w-app">
+    <div id="container" class="container">
+      <aside id="lateral" class="col-md-4 w-contacts">
+        <header id="encabezado1" class="w-profile clearfix">
+          <div class="avatar col-xs-7">
+            <img src="static/image/gian.jpg" alt="">
+            <b id="nombre">
+              <%= user.name %>
+            </b>
+          </div>
+
+          <div class="w-chat-controls col-xs-4">
+            <div id="puntos" class="icon-dots-three-vertical"> </div>
+            <div class="icon-message"></div>
+          </div>
+        </header>
+
+        <div class="w-search icon-search">
+          <input type="text" placeholder="Buscar o empezar un chat nuevo" class="w-search-contacts">
+        </div>
+        <ul class="w-recent-chats">
+          <li>
+            <div class="avatar">
+              <img src="static/image/logocodeacademy.png" alt="" class="wh-44">
+              <h4 class="w-contact-name">Curso 3</h4>
+              <p class="w-last-message" id="mensaje">!!</p>
+            </div>
+            <div class="time" id="hora">15:27</div>
+          </li>
+          <li>
+            <div class="avatar">
+              <img src="static/image/raymi.jpg" alt="" class="wh-44">
+              <h4 class="w-contact-name">Paula</h4>
+              <p class="w-last-message"> Hola</p>
+            </div>
+            <div class="time">12:25</div>
+          </li>
+
+          <li>
+            <div class="avatar">
+              <img src="static/image/curricula.jpg" alt="" class="wh-44">
+              <h4 class="w-contact-name">Curso 2</h4>
+              <p class="w-last-message">Juan: jajaja</p>
+            </div>
+            <div class="time">03/01/2021</div>
+          </li>
+          <li>
+            <div class="avatar">
+              <img src="static/image/jose.jpg" alt="" class="wh-44">
+              <h4 class="w-contact-name">Javier</h4>
+              <p class="w-last-message">Hola</p>
+            </div>
+            <div class="time">03/01/2021</div>
+          </li>
+        </ul>
+      </aside>
+      <section class="col-md-8 w-contacts w-messages">
+        <header id="encabezado" class="w-chat-messages clearfix">
+          <div class="avatar col-xs-9 w-chat-profile">
+            <img src="static/image/logocodeacademy.png" alt="">
+            <h4 class="w-contact-name">Curso 3</h4>
+            <ul class="w-users-messages">
+              <li>Paula, </li>
+              <li>Juan , </li>
+              <li>Jorge, </li>
+              <li>Nati, </li>
+              <li>Alicia, </li>
+              <li>Tú</li>
+            </ul>
+          </div>
+          <div class="w-chat-controls col-xs-2">
+            <div id="clip" class="icon-attachment"></div>
+
+            <div class="icon-dots-three-vertical"></div>
+          </div>
+        </header>
+        <section class="w-chat-panel">
+          <div class="w-message-list clearfix" id="chat">
+            <% for (let mensaje of mensajes) { %>
+              <% if (mensaje.UserId == user.id ) { %>
+                <div class="w-message w-message-out">
+                  <div class="w-message-text">
+                    <p><%= mensaje.text %></p>
+                    <div class="time"><%= mensaje.time %></div>
+                  </div>
+                </div>
+              <% } else { %>
+                <div class="w-message w-message-in">
+                  <div class="w-message-text">
+                    <h5 class="blue-1"><%= user.name %></h5>
+                    <p><%= mensaje.text %></p>
+                    <div class="time"><%= mensaje.time %></div>
+                  </div>
+                </div>
+              <% } %>
+            <% } %>
+
+            <div id="conversacion">
+
+            </div>
+          </div>
+        </section>
+
+        <footer id="message-form" class="pane-footer w-write-message-footer">
+          <ul class="w-write-message-list clearfix pie">
+            <li id="carita" class="col-xs-1 w-write-message-item icon-insert_emoticon w-write-message-icon icono emoji"></li>
+            <li class="col-xs-1 w-write-message-item icon-camera w-write-message-icon icono"></li>
+            <li class="col-xs-8 w-write-message-item w-write-message-input">
+              <input required type="text" name="w-message-input" class="w-write-message-field"
+                placeholder="Escribe tu mensaje aquí" id="mensajes">
+            </li>
+            <li id="enviarMensaje" class="col-xs-1 w-write-message-item icon-mic w-write-message-icon icono"></li>
+          </ul>
+          <!--
+            <form id="archivo" action="/file-upload" class="dropzone">
+              <div class="fallback">
+                <input name="file" type="file" multiple />
+              </div>
+            </form>
+          -->      
+        </footer>
+      </section>
+
+      <div id="modal" class="modal" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Cerrar Sesión</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p>¿Deseas abandonar el chat?</p>
+            </div>
+            <div class="modal-footer">
+              <button id="cancel" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+              <button id="salir" type="button" class="btn btn-primary">Cerrar Sesión</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--aqui termina el modal-->
+
+      
+    </div>
+  </div>
+
+
+
+  <script type="text/javascript" src="js/main.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous"></script>
+  <script src="/static/js/moment-with-locales.min.js"></script>
+  <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+
+
+  <script>
+    const socket = io("http://localhost:8000");
+
+    $('#mensajes').keyup( function(ev){
+      if(ev.keyCode == 13){
+        $('#enviarMensaje').trigger('click');
+      }
+    });
+
+
+    $('#enviarMensaje').on('click', function () {
+      const mensajes = $('#mensajes').val();
+      const hora = moment().format('hh:mm');
+      if (mensajes == '') {
+        alert('Debes escribir algo')
+        return;
+      }
+      //dibujar mensajes salientes
+      $('#chat').append(` <div class="w-message w-message-out">
+                          <div name="msgEnviado" class="w-message-text">
+                            <p> ${mensajes} </p>
+                            <div class="time"> ${hora} </div>
+                          </div>
+                        </div>
+                        ` )
+      console.log(mensajes);
+
+      //mandar socket
+      const datos = {
+        text: mensajes,
+        time: hora,
+        user: '<%=user.name%>',
+        UserId: <%=user.id%>
+      }
+      console.log(datos);
+
+      socket.emit('message', datos)
+      //limpiar el input
+      $('#mensajes').val('');
+
+       //PARA GUARDAR LOS MENSAJES EN DB
+      $.post('/mensaje',datos)
+    });
+
+    //dibujar mensajes entrantes
+
+    socket.on('messageIn', function (data) {
+      $('#chat').append(` <div class="w-message w-message-in">
+                            <div name="msgRecibido" class="w-message-text">
+                              <h5 class="yellow-1"> ${data.user} </h5>
+                              <p> ${data.text} </p>
+                              <div class="time"> ${data.time} </div>
+                            </div>
+                          </div>
+                        ` )
+    });
+
+
+    $('#puntos').on('click', function () {
+      $('#modal').show();
+
+
+      document.getElementById('salir').addEventListener('click', () => {
+        const SalirChat = confirm('Vuelve pronto');
+        if (SalirChat) {
+          window.location = 'login';
+        } else {
+        }
+      });
+    });
+
+    $('#cancel').on('click', function () {
+      $('#modal').hide();
+    });
+
+
+    /*
+    $("div#myId").dropzone({ url: "/file/post" });
+    
+    $('#clip').on('click', function () {
+      console.log('se hizo click en el clip');
+      $('#archivo').show();
+    });
+    
+    */
+
+  </script>
+
+</body>
+
+</html>

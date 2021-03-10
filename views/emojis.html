@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <script src="https://use.fontawesome.com/aa95071b26.js"></script>
+  <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+  <link rel="stylesheet" href="mmm.css">
+  <style type="text/css">
+    .site-link {
+      padding: 5px 15px;
+      position: fixed;
+      z-index: 99999;
+      background: #fff;
+      box-shadow: 0 0 4px rgba(0, 0, 0, .14), 0 4px 8px rgba(0, 0, 0, .28);
+      right: 30px;
+      bottom: 30px;
+      border-radius: 10px;
+    }
+
+    .site-link img {
+      width: 30px;
+      height: 30px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="body">
+    <p class="intro">Type and press enter and try emoji keyboard</p>
+    <div class="chat-cont">
+      <div class="chat-header">
+        <div class="name">
+          <span>Mr. Perfect</span>
+        </div>
+        <div class="menu">
+          <span class="attach">
+            <input type="file" name="">
+          </span>
+          <div class="burg-menu">
+            <span class="menu-ico"></span>
+            <ul class="list">
+              <li>View contact</li>
+              <li>Search</li>
+              <li>Mute Chat</li>
+              <li>Block</li>
+              <li>More <span class="cart"></span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="chat-body">
+        <div class="chats-text-cont">
+
+        </div>
+      </div>
+      <div class="chat-inp">
+        <div class="emoji"></div>
+        <div class="chat-input">
+          <div class="input" contenteditable="true"></div>
+        </div>
+        <div class="opts">
+          <a class="mic"></a>
+          <a class="send"></a>
+        </div>
+      </div>
+      <div class="emoji-dashboard">
+        <ul class="emojis">
+          <li class="emoji" data-clipboard-text="--1"><i class="em em---1"></i></li>
+          <li class="emoji" data-clipboard-text="-1"><i class="em em--1"></i></li>
+          <li class="emoji" data-clipboard-text="100"><i class="em em-100"></i></li>
+          <li class="emoji" data-clipboard-text="1234"><i class="em em-1234"></i></li>
+          <li class="emoji" data-clipboard-text="8ball"><i class="em em-8ball"></i></li>
+          <li class="emoji" data-clipboard-text="a"><i class="em em-a"></i></li>
+          <li class="emoji" data-clipboard-text="ab"><i class="em em-ab"></i></li>
+          <li class="emoji" data-clipboard-text="abc"><i class="em em-abc"></i></li>
+          <li class="emoji" data-clipboard-text="abcd"><i class="em em-abcd"></i></li>
+          <li class="emoji" data-clipboard-text="accept"><i class="em em-accept"></i></li>
+          <li class="emoji" data-clipboard-text="aerial_tramway"><i class="em em-aerial_tramway"></i></li>
+          <li class="emoji" data-clipboard-text="airplane"><i class="em em-airplane"></i></li>
+          <li class="emoji" data-clipboard-text="alarm_clock"><i class="em em-alarm_clock"></i></li>
+          <li class="emoji" data-clipboard-text="alien"><i class="em em-alien"></i></li>
+          <li class="emoji" data-clipboard-text="ambulance"><i class="em em-ambulance"></i></li>
+          <li class="emoji" data-clipboard-text="anchor"><i class="em em-anchor"></i></li>
+          <li class="emoji" data-clipboard-text="angel"><i class="em em-angel"></i></li>
+          <li class="emoji" data-clipboard-text="anger"><i class="em em-anger"></i></li>
+          <li class="emoji" data-clipboard-text="angry"><i class="em em-angry"></i></li>
+          <li class="emoji" data-clipboard-text="anguished"><i class="em em-anguished"></i></li>
+          <li class="emoji" data-clipboard-text="ant"><i class="em em-ant"></i></li>
+          <li class="emoji" data-clipboard-text="apple"><i class="em em-apple"></i></li>
+          <li class="emoji" data-clipboard-text="aquarius"><i class="em em-aquarius"></i></li>
+          <li class="emoji" data-clipboard-text="aries"><i class="em em-aries"></i></li>
+          <li class="emoji" data-clipboard-text="arrow_backward"><i class="em em-arrow_backward"></i></li>
+          <li class="emoji" data-clipboard-text="arrow_double_down"><i class="em em-arrow_double_down"></i></li>
+          <li class="emoji" data-clipboard-text="arrow_double_up"><i class="em em-arrow_double_up"></i></li>
+          <li class="emoji" data-clipboard-text="arrow_down"><i class="em em-arrow_down"></i></li>
+          <li class="emoji" data-clipboard-text="arrow_down_small"><i class="em em-arrow_down_small"></i></li>
+          <li class="emoji" data-clipboard-text="arrow_forward"><i class="em em-arrow_forward"></i></li>
+          <li class="emoji" data-clipboard-text="arrow_heading_down"><i class="em em-arrow_heading_down"></i></li>
+          <li class="emoji" data-clipboard-text="arrow_heading_up"><i class="em em-arrow_heading_up"></i></li>
+          <li class="emoji" data-clipboard-text="arrow_left"><i class="em em-arrow_left"></i></li>
+          <li class="emoji" data-clipboard-text="arrow_lower_left"><i class="em em-arrow_lower_left"></i></li>
+          <li class="emoji" data-clipboard-text="arrow_lower_right"><i class="em em-arrow_lower_right"></i></li>
+          <li class="emoji" data-clipboard-text="arrow_right"><i class="em em-arrow_right"></i></li>
+          <li class="emoji" data-clipboard-text="arrow_right_hook"><i class="em em-arrow_right_hook"></i></li>
+          <li class="emoji" data-clipboard-text="arrow_up"><i class="em em-arrow_up"></i></li>
+          <li class="emoji" data-clipboard-text="arrow_up_down"><i class="em em-arrow_up_down"></i></li>
+          <li class="emoji" data-clipboard-text="arrow_up_small"><i class="em em-arrow_up_small"></i></li>
+          <li class="emoji" data-clipboard-text="arrow_upper_left"><i class="em em-arrow_upper_left"></i></li>
+          <li class="emoji" data-clipboard-text="arrow_upper_right"><i class="em em-arrow_upper_right"></i></li>
+          <li class="emoji" data-clipboard-text="arrows_clockwise"><i class="em em-arrows_clockwise"></i></li>
+          <li class="emoji" data-clipboard-text="arrows_counterclockwise"><i class="em em-arrows_counterclockwise"></i>
+          </li>
+          <li class="emoji" data-clipboard-text="art"><i class="em em-art"></i></li>
+          <li class="emoji" data-clipboard-text="articulated_lorry"><i class="em em-articulated_lorry"></i></li>
+          <li class="emoji" data-clipboard-text="astonished"><i class="em em-astonished"></i></li>
+          <li class="emoji" data-clipboard-text="atm"><i class="em em-atm"></i></li>
+          <li class="emoji" data-clipboard-text="b"><i class="em em-b"></i></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="site-link">
+    <a href="http://creatorvisions.com" target="_blank">
+      Creator <img src="http://creatorvisions.com/img/new-logo-2.png">
+      Visions</a>
+  </div>
+
+  <script>
+    $('.chat-header .menu .menu-ico').click(function () {
+      $('.chat-header .menu ul.list').slideToggle('fast');
+    });
+    $(document).click(function () {
+      $(".chat-header .menu ul.list").slideUp('fast');
+    });
+    $(".chat-header .menu ul.list,.chat-header .menu .menu-ico").click(function (e) {
+      e.stopPropagation();
+    });
+    $('.chat-inp .emoji').click(function () {
+      $('.emoji-dashboard').slideToggle('fast');
+    });
+    $(document).click(function () {
+      $(".emoji-dashboard").slideUp('fast');
+    });
+    $(".chat-header .menu ul.list,.chat-inp .emoji").click(function (e) {
+      e.stopPropagation();
+    });
+    $('.emoji-dashboard li .em').click(function () {
+      var emo = $(this).css('background-image').split('"')[1];
+      $('.chat-inp .input').find('div').remove();
+      $('.chat-inp .input').append('<img src="' + emo + '">');
+      $(".emoji-dashboard").slideUp('fast');
+
+    });
+    $('.chat-inp .opts .send').click(function () {
+      var val = $('.chat-inp .input').html();
+      if (val.length > 0) {
+        $('.chat-body .chats-text-cont').append('<p class="chat-text"><span>' + val + '</span></p>')
+      }
+      $('.chat-inp .input').html('');
+      $('.chats-text-cont div').remove();
+    });
+    $('input,.input').each(function () {
+      tmpval = $(this).text().length;
+      if (tmpval != '') {
+        $(this).prev().addClass('trans');
+        $(this).parent().addClass('lined');
+      }
+    });
+    $('input,.input').focus(function () {
+      $(this).prev().addClass('trans');
+      $(this).parent().addClass('lined');
+      $(document).keypress(function (e) {
+        if (e.which == 13) {
+          $('.chat-inp .opts .send').click();
+        }
+      });
+    }).blur(function () {
+      if ($(this).text().length == '') {
+        $(this).prev().removeClass('trans');
+        $(this).parent().removeClass('lined');
+      }
+    });
+  </script>
+</body>
+
+</html>
